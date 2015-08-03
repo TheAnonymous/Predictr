@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-justify">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="1000">
+                <div class="carousel-inner">
+                    <div class="active item">
+                        <img ng-src="{{image}}" style="max-width:400px; max-height:400px;" class="img-thumbnail">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="caption">
+                <h1>{{person.name}} <br>
+            </h1>
+                <p class="text-justify">{{person.name}}&nbsp; {{person.description}}</p>
+                <p>
+                    <label>Hashtags: </label> {{person.hashtags}}</p>
+            </div>
+            <a ui-sref="findPerson.addPrediction" <button class="btn btn-success">
+                Add Prediction
+                </button>
+            </a>
+            <button ng-click="editPerson(person)" class="btn btn-info">
+                Edit Person
+            </button>
+            <button ng-click="report()" class="btn btn-danger">
+                Report Person
+            </button>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Filter:</label>
+                <input class="form-control" type="text" placeholder="Enter text to filter table" ng-model="predFilterText" />
+
+            </div>
+            <table class="table">
+                <tr>
+                    <th>Prediction</th>
+                    <th>Source</th>
+                    <th>Result</th>
+                    <th>Source</th>
+                    <th>Hashtags</th>
+                    <th>Rating
+                        <br/><small>(schlecht:0-10:sehr gut)</small>
+                    </th>
+                    <th>Report</th>
+                </tr>
+                <tr ng-repeat=" pred in person.predictions | toArray| filter:predFilterText">
+                    <td>{{pred.prediction.description}}</td>
+                    <td>
+                        <a ng-href="{{pred.prediction.source}}"><small>{{pred.prediction.source}}</small></a>
+                    </td>
+                    <td>{{pred.result.description}}</td>
+                    <td>
+                        <a ng-href="{{pred.result.source}}"><small>{{pred.result.source}}</small></a>
+                    </td>
+                    <td>{{pred.hashtags}}</td>
+                    <td>{{pred.rate}}</td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="report()">Report Prediction</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-12">
+            <hr/>
+        </div>
+        <div class="col-md-12">
+            <dir-disqus disqus-shortname="Predictr" disqus-identifier="{{ disqKey}}" disqus-title="{{ person.name }}" disqus-url="{{ disqUrl }}">
+            </dir-disqus>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: THIS CODE IS ONLY AN EXAMPLE * * */
+                var disqus_shortname = 'Predictr'; // Required - Replace example with your forum shortname
+                var disqus_identifier = $scope.disqKey;
+                var disqus_title = $scope.person.name;
+                var disqus_url = $scope.disqUrl;
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function () {
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+                DISQUS.reset({
+                    reload: true,
+                    config: function () {
+                        this.page.identifier = $scope.disqKey;
+                        this.page.url = $scope.disqUrl;
+                    }
+                });
+            </script>
+        </div>
+
+    </div>
+</div>

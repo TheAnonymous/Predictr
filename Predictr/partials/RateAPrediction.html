@@ -1,0 +1,115 @@
+<div class="row">
+    <div class="col-md-6">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="http://placehold.it/1920x600">
+                    <div class="carousel-caption"></div>
+                </div>
+            </div><a class="left carousel-control" href="#carousel-example-generic" data-slide="prev" ng-non-bindable><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next" ng-non-bindable>
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="caption">
+            <h1 class="">Sten Smith&nbsp;
+              <br>
+            </h1>
+            <p class="text-justify">Prof. Dr. Sten Smith&nbsp; for World Gold Economics</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <blockquote>
+            <p>The world will go down in 2012</p>
+        </blockquote>
+    </div>
+    <div class="col-md-6">
+        <p contenteditable="true">Youtube.com</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h1>Result:</h1>
+        <form role="form">
+            <div class="form-group">
+                <label>Short description</label>
+                <p>Short description of the result" ng-model="resultDescription</p>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h1>Source:</h1>
+        <ul class="media-list">
+            <li class="media">
+                <a class="pull-left" href="#"><img class="media-object" src="http://placehold.it/64x64">
+                </a>
+
+                <div class="media-body">
+                    <h4 class="media-heading">Media heading</h4>
+                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    </p>
+                </div>
+            </li>
+            <li class="media">
+                <a class="pull-left" href="#"><img class="media-object" src="http://placehold.it/64x64">
+                </a>
+
+                <div class="media-body">
+                    <h4 class="media-heading">Media heading</h4>
+                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 text-left">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="inputText" class="col-sm-2 control-label">Hashtags</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="inputText" placeholder="#Gold #AlwaysWrong" type="text">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6 text-right">
+        <rating ng-model="rate" max="max" on-hover="hoveringOver(value) " on-leave="overStar=null"></rating>
+        <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+
+    </div>
+</div>
+<div class="row ">
+    <div class="col-md-12 ">
+        <hr>
+    </div>
+</div>
+<div class="row ">
+    <div class="col-md12 text-right ">
+        <div class="btn-group ">
+            <a href="# " class="btn btn-danger ">Report
+            <span class="glyphicon glyphicon-fire "></span>
+            </a>
+        </div>
+    </div>
+</div>

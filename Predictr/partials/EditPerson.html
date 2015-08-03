@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="page-header">
+                <h1 contenteditable="true">Edit: <h2>{{person.name}}</h2></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form role="form">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input class="form-control" placeholder="Enter name" type="text" ng-model="person.name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Short description</label>
+                    <textarea class="form-control" placeholder="Enter short description..." ng-model="person.description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>File input</label>
+                    <input type="file" accept="image/*" capture="camera" id="file-upload">
+                </div>
+                <div class="form-group">
+                    <label>Hashtags</label>
+                    <input class="form-control" placeholder="#gold #silver" type="text" ng-model="person.hashtags">
+                </div>
+                <button type="submit" class="btn btn-success" ng-click="saveChangedPersOrComp()">Save</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img id="profileImage" ng-src="{{image}}" style="max-width:400px; max-height:400px;" class="img-thumbnail">
+                        <div class="carousel-caption">
+                            <h2>{{person.name}}</h2>
+                            <p>{{person.description}}</p>
+                            <p>{{person.hashtags}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

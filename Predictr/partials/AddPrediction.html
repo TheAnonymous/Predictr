@@ -1,0 +1,136 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-justify">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="1000">
+                <div class="carousel-inner">
+                    <div class="active item">
+                        <img ng-src="{{person.image}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="caption">
+                <h1>{{person.name}} <br>
+            </h1>
+                <p class="text-justify"> {{person.description}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Prediction:</h1>
+            <form role="form">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Short description</label>
+                    <textarea class="form-control" id="exampleInputEmail1" placeholder="Enter short description" rows="10" type="text" ng-model="prediction.description"></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h1>Source:</h1>
+            <form role="form">
+                <div class="form-group">
+                    <label>Link</label>
+                    <input class="form-control" placeholder="Newspaper or Youtube video" type="text" ng-model="prediction.source" ng-change="fetchArticle()">
+                </div>
+            </form>
+            <ul class="media-list">
+                <li class="media">
+                    <a class="pull-left" href="#"><img class="media-object" src="http://placehold.it/64x64" ng-src="{{image}}">
+                    </a>
+
+                    <div class="media-body">
+                        <h4 class="media-heading">Media heading</h4>
+                        <p>Coming soon...
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Result:</h1>
+            <form role="form">
+                <div class="form-group">
+                    <label>Short description</label>
+                    <textarea class="form-control" id="exampleInputEmail1" placeholder="Enter short description" rows="10" type="text" ng-model="result.description"></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h1>Source:</h1>
+            <form role="form">
+                <div class="form-group">
+                    <label>Link</label>
+                    <input class="form-control" placeholder="Newspaper or Youtube video" type="text" ng-model="result.source">
+                </div>
+            </form>
+            <ul class="media-list">
+                <li class="media">
+                    <a class="pull-left" href="#"><img class="media-object" src="http://placehold.it/64x64">
+                    </a>
+
+                    <div class="media-body">
+                        <h4 class="media-heading">Media heading</h4>
+                        <p>Coming soon...
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-left">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="inputText" class="col-sm-2 control-label">Hashtags</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputText" placeholder="#Gold #AlwaysWrong" type="text" ng-model="hashtags">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 text-right">
+            <label>How correct was the prediction</label>
+            <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+            <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md12 text-right">
+            <div class="btn-group"><a href="#" class="btn btn-success" ng-click="submit()">Submit
+  <span class="glyphicon glyphicon-ok"></span>
+</a><a href="#" class="btn btn-success">Save as Prev<span class="glyphicon glyphicon-bookmark"></span></a>
+
+                <a href="#" class="btn btn-danger">Delete
+            <span class="glyphicon glyphicon-remove"></span>
+            </a>
+            </div>
+        </div>
+    </div>
+</div>

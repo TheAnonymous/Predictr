@@ -1,0 +1,16 @@
+<h2> Report</h2>
+<p>Please report as exactly as possible why something is wrong or doesn't belong here etc. This form is anonym but it would probably better if you would fill out also your Email-adress so we may can ask further questions and stay in contact.</p>
+<form name="addCateg" novalidate>
+    <div class="form-group">
+        <input type="text" placeholder="Name of Person or Company" ng-model="report.name" class="form-control" required/>
+    </div>
+    <div class="form-group">
+        <textarea type="text" placeholder="Description why and whats it's wrong" ng-model="report.description" class="form-control" required></textarea>
+    </div>
+    <div class="form-group">
+        <label>Optional</label>
+        <input type="text" placeholder="Your email adress for further contact" ng-model="report.email" class="form-control" />
+    </div>
+    <button class="btn btn-success" ng-disabled="addCateg.$invalid">Send</button>
+
+</form>

@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="page-header">
+                <h1>Edit Profile
+              <br>
+            </h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form role="form" name="profileForm" novalidate>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email" ng-model="profile.email" required></input>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password" ng-model="profile.password" required></input>
+                </div>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input class="form-control" placeholder="Willywonker" type="text" ng-model="profile.username" required></input>
+                </div>
+                <div class="form-group">
+                    <label>Short description of yourself</label>
+                    <textarea class="form-control" placeholder="I like gold and left wing politics" ng-model="profile.description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Upload a Profile Photo</label>
+                    <input type="file" accept="image/*" capture="camera" id="file-upload"> </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <label>Profile Image</label>
+            </div>
+            <div class="col-md-12"><img id="profileImage" style="max-width:400px; max-height:400px;" class="img-thumbnail">
+            </div>
+
+        </div>
+        <div class="col-md-12">
+            <a ui-sref="editProfile.showChanges">
+                <button class="btn btn-primary" ng-click="loadChanges()">Show Changes</button>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-md-12" ui-view></div>

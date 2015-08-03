@@ -1,0 +1,12 @@
+<h2> Add Category</h2>
+<p>This way you can add a category. To prevent that every user adds multiple categories, you can only make a proposal. If an admin think its a good category it will be added.</p>
+<form name="addCateg" novalidate>
+    <div class="form-group">
+        <input type="text" placeholder="Name of the category" ng-model="categ.name" class="form-control" required/>
+    </div>
+    <div class="form-group">
+        <textarea type="text" placeholder="Description why it is a good idea to add this category" ng-model="categ.description" class="form-control" required></textarea>
+    </div>
+    <button class="btn btn-success" ng-disabled="addCateg.$invalid">Send</button>
+
+</form>

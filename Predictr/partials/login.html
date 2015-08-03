@@ -1,0 +1,52 @@
+<div class="row" ng-show="!loggedIn" ng-controller="loginCtrl">
+    <div class="col-md-4 well">
+        <div class="col-md-12">
+            <h3>Login via</h3>
+        </div>
+        <div class="form-group col-md-6">
+
+            <a href="#login" ng-click="authenticate('github')">
+                <button class="btn btn-primary"><span class="fa fa-github-square"></span> Github</button>
+            </a>
+        </div>
+        <div class="form-group col-md-6">
+            <a href="#" ng-click="authenticate('google')">
+                <button class="btn btn-primary"><span class="fa fa-google-plus-square"></span> Google</button>
+            </a>
+        </div>
+        <div class="form-group col-md-6">
+            <a href="#" ng-click="authenticate('twitter')">
+                <button class="btn btn-primary"><span class="fa fa-twitter-square"></span> Twitter</button>
+            </a>
+        </div>
+        <div class="form-group col-md-6">
+            <a href="#" ng-click="authenticate('facebook')">
+                <button class="btn btn-primary"><span class="fa fa-facebook-square"></span> Facebook</button>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4 well">
+        <form name="loginForm" novalidate>
+            <div class="form-group  col-md-12">
+                <h3>Email Login</h3>
+            </div>
+            <div class="form-group  col-md-12">
+                <input class="form-control" type="email" placeholder="Enter Email" ng-model="email" required/>
+            </div>
+            <div class="form-group col-md-12">
+                <input class="form-control" type="password" placeholder="Enter Password" ng-model="password" required/>
+            </div>
+            <div class="form-group  col-md-6">
+                <a href="#" ng-click="authenticate('email')">
+                    <button class="btn btn-success" ng-disabled="loginForm.$invalid">Login</button>
+                </a>
+            </div>
+            <div class="form-group col-md-6">
+                <a href="#" ng-click="registration()">
+                    <button class="btn btn-info" ng-disabled="registerForm.$invalid">Registration</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

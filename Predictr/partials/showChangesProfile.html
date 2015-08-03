@@ -1,0 +1,15 @@
+<h1>Changes made:</h1>
+<p>Companys/Persons</p>
+<div class="form-group">
+    <input type="text" placeholder="Type to filter" ng-model="filtertext" class="form-control">
+</div>
+<table>
+    <tr>
+        <th>Person/Company name</th>
+        <th>Changes</th>
+    </tr>
+    <tr ng-repeat="person in persons |  filter: filtertext">
+        <td>{{person.name}}</td>
+        <td>{{person.changes}}</td>
+    </tr>
+</table>
